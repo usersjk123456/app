@@ -182,6 +182,8 @@ class Routes {
   static String recommendFansPage = "/recommendFansPage";
   static String xieYi = "/xieYi";
   static String memberRechargePage = "/memberRechargePage";
+  /// 联系我们界面地址
+  static String contactUS = "contactUS";
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
   static void configureRoutes(FluroRouter router) {
@@ -630,5 +632,7 @@ class Routes {
 
     router.define(memberRechargePage,
         handler: memberRechargePageHandler, transitionType: TransitionType.inFromRight);
+    router.define(contactUS,
+        handler: contactUSPageHandler, transitionType: TransitionType.inFromRight);
   }
 }

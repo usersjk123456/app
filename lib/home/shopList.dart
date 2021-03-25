@@ -298,7 +298,7 @@ class _ShopListState extends State<ShopList>
                                                           ]
                                                         : []*/),
                                               ),
-                                              Container(
+                                              /*Container(
                                                 alignment: Alignment.bottomLeft,
                                                 margin: EdgeInsets.only(
                                                     top: ScreenUtil()
@@ -315,7 +315,7 @@ class _ShopListState extends State<ShopList>
                                                         .setWidth(24.0),
                                                   ),
                                                 ),
-                                              ),
+                                              ),*/
                                               Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.end,

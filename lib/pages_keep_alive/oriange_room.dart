@@ -485,7 +485,7 @@ class OriangeRoomPageState extends State<OriangeRoomPage>
                     ScreenUtil.instance.setWidth(550.0),
                     'xq',
                   ),
-  Global.isShow
+  /*Global.isShow
                   ?  
                     Container(
                     color: Color(0xffffffff),
@@ -524,7 +524,7 @@ class OriangeRoomPageState extends State<OriangeRoomPage>
                     width: ScreenUtil().setWidth(750),
                   ):Container(),
                   Global.isShow
-                  ?  rili:Container(),
+                  ?  rili:Container(),*/
                   // 分类
                   /* Global.isShow
                   ?Container(

@@ -19,6 +19,7 @@ import 'package:client/baby/wili_tjdetails.dart';
 import 'package:client/login/xieyi.dart';
 import 'package:client/mine/bamai_list.dart';
 import 'package:client/mine/member_recharge_page.dart';
+import 'package:client/set/contact_us_page.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import '../login/login.dart';
@@ -1175,3 +1176,9 @@ var memberRechargePageHandler = new Handler(
       return MemberRechargePage();
 });
 
+/// 虽然这么写可以实现，但是始终认为这是一种智障写法
+var contactUSPageHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+      var param = params["phoneNumber"].first;
+      return ContactUSPage(phoneNumber: param,);
+});

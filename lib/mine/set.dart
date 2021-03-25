@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'package:client/config/application.dart';
+import 'package:client/config/routes.dart';
 import 'package:client/widgets/btn_widget.dart';
 
 import '../widgets/set_menu.dart';
@@ -199,7 +201,12 @@ class SetPageState extends State<SetPage> {
           isLine: 0,
           isNavigator: false,
           value: phoneNumber ?? '',
-          tapFun: null,
+          tapFun: () {
+            Application.router.navigateTo(
+              context, Routes.contactUS + "?phoneNumber=$phoneNumber",
+
+            );
+          },
         ),
       ]),
     );
