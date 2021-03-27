@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
         appId: "wx085b0ae36cbcac1d",
         doOnAndroid: true,
         doOnIOS: true,
-        universalLink: "https://www.jxhc-net.com/");w
+        universalLink: "https://www.jxhc-net.com/");
     // await fluwx.isWeChatInstalled();
   }
 

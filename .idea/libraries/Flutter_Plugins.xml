@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
+  <library name="Flutter Plugins">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../FlutterToast" />
       <root url="file://$PROJECT_DIR$/../alipay_kit" />
@@ -33,7 +33,6 @@
       <root url="file://D:/Program Files/flutter/.pub-cache/hosted/pub.flutter-io.cn/svgaplayer_flutter-1.1.0" />
       <root url="file://D:/Program Files/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluwx-2.6.1" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES />
   </library>
 </component>
