@@ -512,5 +512,8 @@ class Api {
       BASE_URL + '/server/baby/delcommentevent'; //删除评论大事记
 
   static const String ROON_DETAILS_URL =
-      BASE_URL + '/server/live/room-detail'; //直播预告详情
+      BASE_URL + '/server/live/room-detail'; //直播预告详
+
+  /// 是否启用微信登录
+  static const String getEnableVXLogin = BASE_URL + "/server/index/indexConfig";// 情
 }

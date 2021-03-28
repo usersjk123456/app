@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fcb20ce-2870-471a-bc97-9a68cda8696a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,47 +26,6 @@
         <option value="Dart File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>wx.yunzhonghulu.cn</find>
-      <find>yunzhon</find>
-      <find>sw</find>
-      <find>/index/index</find>
-      <find>bannerImages</find>
-      <find>hc-</find>
-      <find>成为供应</find>
-      <find>= &quot;&quot;</find>
-      <find>status</find>
-      <find>isLive</find>
-      <find>length</find>
-      <find>name</find>
-      <find>成为供应商</find>
-      <find>minePage</find>
-      <find>isStore</find>
-      <find>trim</find>
-      <find>成为</find>
-      <find>去</find>
-      <find>callAlipay</find>
-      <find>_ALIPAY_USE_RSA2</find>
-      <find>payOrderMap</find>
-      <find>_alipay</find>
-      <find>_ALIPAY_PRIVATEKEY</find>
-      <find>拼团</find>
-      <find>赚</find>
-      <find>关注</find>
-      <find>tabController</find>
-      <find>server/baby/explainlist</find>
-      <find>getFoodList</find>
-      <find>agree</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>VipRecharge</replace>
-      <replace>MemberRechargePage</replace>
-      <replace>MemberRecharge</replace>
-      <replace />
-      <replace>nickName</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,7 +82,7 @@
       <workItem from="1614354183732" duration="1000" />
       <workItem from="1614354190939" duration="3755000" />
       <workItem from="1614425304356" duration="3554000" />
-      <workItem from="1616809575483" duration="14000" />
+      <workItem from="1616809575483" duration="1181000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1615210161658</created>
@@ -184,6 +143,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2002" y="-41" width="647" height="538" key="find.popup" timestamp="1616809701444">
+      <screen x="1366" y="-312" width="1920" height="1080" />
+    </state>
+    <state x="2002" y="-41" width="647" height="538" key="find.popup/0.0.1366.728/1366.-312.1920.1080@1366.-312.1920.1080" timestamp="1616809701444" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

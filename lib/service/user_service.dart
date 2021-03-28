@@ -28,6 +28,25 @@ class UserServer {
     }
   }
 
+  Future getEnableVxLogin(Map<String, dynamic> parameters, OnSuccess onSuccess,
+      OnFail onFail) async {
+    final prefs = await SharedPreferences.getInstance();
+    parameters['jwt'] = prefs.getString('jwt');
+    try {
+      var response = await HttpUtil.instance.get(
+        Api.getEnableVXLogin,
+        parameters: parameters,
+      );
+      if (response['isShowWxLogin'] == 0) {
+        onSuccess(response);
+      } else {
+        onFail(response['errmsg']);
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
 
   Future cwts(Map<String, dynamic> parameters, OnSuccess onSuccess,
       OnFail onFail) async {

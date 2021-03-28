@@ -634,7 +634,7 @@ class _XiangQingPageState extends State<XiangQingPage>
                     ScreenUtil.instance.setWidth(750.0),
                     'xq',
                   ),
-                  Positioned(
+                  /*Positioned(
                     left: 10,
                     bottom: 10,
                     child: Row(
@@ -653,7 +653,7 @@ class _XiangQingPageState extends State<XiangQingPage>
                             )),
                       ],
                     ),
-                  ),
+                  ),*/
                 ],
               ),
 

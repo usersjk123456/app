@@ -440,20 +440,20 @@ class SearchState extends State<Search> with SingleTickerProviderStateMixin {
                                       fontSize:
                                           ScreenUtil.instance.setWidth(27.0)),
                                   children: [
-                                    TextSpan(
+                                    /*TextSpan(
                                         text: '/赚￥' +
                                             listView[index]['commission']
                                                 .toString(),
                                         style: TextStyle(
                                             color: Colors.red,
                                             fontSize: ScreenUtil.instance
-                                                .setWidth(27.0))),
+                                                .setWidth(27.0))),*/
                                   ]),
                             ),
                             SizedBox(
                               height: ScreenUtil().setHeight(10),
                             ),
-                            Container(
+                       /*     Container(
                               width: ScreenUtil.instance.setWidth(266.0),
                               alignment: Alignment.bottomLeft,
                               child: Text(
@@ -463,11 +463,11 @@ class SearchState extends State<Search> with SingleTickerProviderStateMixin {
                                   fontSize: ScreenUtil.instance.setWidth(24.0),
                                 ),
                               ),
-                            ),
+                            ),*/
                             new Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                !isLive && !isStore
+                                /*!isLive && !isStore
                                     ? Container()
                                     : InkWell(
                                         child: Container(
@@ -515,7 +515,7 @@ class SearchState extends State<Search> with SingleTickerProviderStateMixin {
                                             }
                                           }
                                         },
-                                      ),
+                                      ),*/
                                 Container(
                                   width: ScreenUtil.instance.setWidth(200.0),
                                   height: ScreenUtil.instance.setWidth(75.0),

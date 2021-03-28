@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:client/common/string.dart';
 import 'package:client/utils/shared_preferences_util.dart';
 import 'package:flutter/gestures.dart';
@@ -40,6 +42,8 @@ class LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
   FocusNode phoneFocus = FocusNode();
   FocusNode codeFocus = FocusNode();
 
+  bool showVXLogin = true;
+
   @override
   void initState() {
     super.initState();
@@ -48,6 +52,7 @@ class LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
     showAgreement();
     WidgetsBinding.instance.addObserver(this);
     type = 'login';
+    getEnableVxLogin();
   }
 
   void updateGroupValue(v) {
@@ -234,7 +239,7 @@ class LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
               '',
             ),
           ),
-          Expanded(
+          /*Expanded(
               flex: 2,
               child: InkWell(
                 child: Text(
@@ -257,7 +262,7 @@ class LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
           Expanded(
             flex: 2,
             child: new Icon(Icons.arrow_forward),
-          )
+          )*/
         ],
       ),
     );
@@ -581,8 +586,12 @@ class LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                   ),
                   SizedBox(height: ScreenUtil().setHeight(30)),
                   xieyi,
-                  Global.isShow ? thirdLoginArea : Container(),
-                  Global.isShow ? weChatArea : Container()
+                  Global.isShow && showVXLogin ? Column(
+                    children: [
+                      thirdLoginArea,
+                      weChatArea
+                    ],
+                  ): Container(),
                   // weChatArea
                 ],
               ),
@@ -607,5 +616,21 @@ class LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
         }
       },
     );
+  }
+
+  /// 苹果是否有微信登录用这种方法判断
+  /// 智障做法
+  Future<void> getEnableVxLogin() async {
+    Map<String, dynamic> map = Map();
+    UserServer().getEnableVxLogin(map, (success) async {
+     if (Platform.isAndroid) {
+       return;
+     }
+     setState(() {
+       showVXLogin = success["isShowWxLogin"] == 1;
+     });
+    }, (onFail) async {
+      ToastUtil.showToast(onFail);
+    });
   }
 }
