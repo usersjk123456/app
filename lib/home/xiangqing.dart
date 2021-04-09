@@ -780,22 +780,25 @@ class _XiangQingPageState extends State<XiangQingPage>
                               )),
 
                           SizedBox(
-                            width: ScreenUtil().setWidth(16),
+                            width: ScreenUtil().setWidth(10),
                           ),
-                          Container(
+                          Expanded(
                             // color: Colors.black87,
-                            alignment: Alignment.centerLeft,
-                            width: ScreenUtil().setWidth(430),
-                            child: Text(
-                              '${goods['name']}',
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2,
-                              style: TextStyle(
-                                fontSize: ScreenUtil.instance.setWidth(32.0),
-                                color: Color(0xfff000000),
-                                fontWeight: FontWeight.bold,
+                            //alignment: Alignment.centerLeft,
+                            //width: ScreenUtil().setWidth(430),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                '${goods['name']}',
+                                //overflow: TextOverflow.ellipsis,
+                                //maxLines: 3,
+                                style: TextStyle(
+                                  fontSize: ScreenUtil.instance.setWidth(25.0),
+                                  color: Color(0xfff000000),
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
+                            )
                           ),
                         ],
                       ),

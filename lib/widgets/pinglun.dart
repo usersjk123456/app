@@ -1,7 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:client/common/color.dart';
 import 'package:client/widgets/cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -181,7 +184,18 @@ class _PinglunState extends State<Pinglun> {
                   height: ScreenUtil().setWidth(25),
                 ),
                 widget.type == 1
-                    ? Container(
+                    ?
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => GalleryPhotoViewWrapper(
+                          initialIndex: index,
+                          attahcments: widget.item,
+                        )
+                    ));
+                  },
+                  child:
+                Container(
                         alignment: Alignment.centerLeft,
                         child: CachedImageView(
                           ScreenUtil.instance.setWidth(240.0),
@@ -195,7 +209,7 @@ class _PinglunState extends State<Pinglun> {
                             bottomRight: Radius.circular(5),
                           ),
                         ),
-                      )
+                      ),)
                     : Container(),
                 SizedBox(
                   height: ScreenUtil().setWidth(24),
@@ -296,6 +310,105 @@ class _PinglunState extends State<Pinglun> {
           child: Column(children: boxs()),
         )
       ], //要显示的子控件集合
+    );
+  }
+}
+
+
+class GalleryPhotoViewWrapper extends StatefulWidget {
+  GalleryPhotoViewWrapper({
+    this.loadingBuilder,
+    this.backgroundDecoration,
+    this.minScale,
+    this.maxScale,
+    this.initialIndex,
+    this.scrollDirection = Axis.horizontal,
+    this.attahcments,
+  }) : pageController = PageController(initialPage: initialIndex);
+
+  final LoadingBuilder loadingBuilder;
+  final Decoration backgroundDecoration;
+  final dynamic minScale;
+  final dynamic maxScale;
+  final int initialIndex;
+  final PageController pageController;
+  final Axis scrollDirection;
+  final List attahcments;
+
+  @override
+  State<StatefulWidget> createState() {
+    return _GalleryPhotoViewWrapperState();
+  }
+}
+
+class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
+  int currentIndex;
+
+  @override
+  void initState() {
+    currentIndex = widget.initialIndex;
+    super.initState();
+  }
+
+  void onPageChanged(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(color: Colors.white),
+      ),
+      body: Container(
+        decoration: widget.backgroundDecoration,
+        constraints: BoxConstraints.expand(
+          height: MediaQuery.of(context).size.height,
+        ),
+        child: Stack(
+          alignment: Alignment.bottomRight,
+          children: <Widget>[
+            PhotoViewGallery.builder(
+              scrollPhysics: const BouncingScrollPhysics(),
+              builder: _buildItem,
+              itemCount: widget.attahcments.length,
+              loadingBuilder: widget.loadingBuilder,
+              backgroundDecoration: widget.backgroundDecoration,
+              pageController: widget.pageController,
+              onPageChanged: onPageChanged,
+              scrollDirection: widget.scrollDirection,
+            ),
+            Container(
+              height: 50,
+              alignment: Alignment.center,
+              child: Text(
+                "${currentIndex + 1}/${widget.attahcments.length}",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 17.0,
+                  decoration: null,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  PhotoViewGalleryPageOptions _buildItem(BuildContext context, int index) {
+    return PhotoViewGalleryPageOptions(
+      imageProvider: CachedNetworkImageProvider(
+        widget.attahcments[index]['img'],
+      ),
+      initialScale: PhotoViewComputedScale.contained,
+      minScale: PhotoViewComputedScale.contained * (0.5 + index / 10),
+      maxScale: PhotoViewComputedScale.covered * 1.1,
+      heroAttributes: PhotoViewHeroAttributes(tag: index),
     );
   }
 }

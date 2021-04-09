@@ -37,11 +37,7 @@ class UserServer {
         Api.getEnableVXLogin,
         parameters: parameters,
       );
-      if (response['isShowWxLogin'] == 0) {
-        onSuccess(response);
-      } else {
-        onFail(response['errmsg']);
-      }
+      onSuccess(response);
     } catch (e) {
       print(e);
     }
@@ -135,7 +131,7 @@ class UserServer {
     }
   }
 
-  Future getUserInfo(Map<String, dynamic> parameters, OnSuccess onSuccess,
+  Future  getUserInfo(Map<String, dynamic> parameters, OnSuccess onSuccess,
       OnFail onFail) async {
     final prefs = await SharedPreferences.getInstance();
     parameters['jwt'] = prefs.getString('jwt');
