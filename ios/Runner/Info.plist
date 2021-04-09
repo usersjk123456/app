@@ -66,6 +66,8 @@
 	<string>请允许应用打开摄像头,以便在直播时,可以拍摄到您</string>
 	<key>NSContactsUsageDescription</key>
 	<string>请允许应用访问日历,以便程序更好的服务您</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>获取位置信息 以便确认您的位置</string>
 	<key>NSLocationUsageDescription</key>
 	<string>获取位置信息 以便确认您的位置</string>
 	<key>NSMicrophoneUsageDescription</key>
