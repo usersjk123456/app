@@ -258,7 +258,7 @@ class RecommendFansPageState extends State<RecommendFansPage> {
     UserServer().getUserInfo(map, (success) async {
       if (mounted) {
         setState(() {
-          fans = success['fans'].toString();
+          fans = success["user"]['fans'].toString();
         });
       }
     }, (onFail) async {
@@ -374,7 +374,7 @@ class RecommendFansPageState extends State<RecommendFansPage> {
                       Container(
                         width: ScreenUtil().setWidth(750),
                         alignment: Alignment.topCenter,
-                        child: Text('当前粉丝数量：${StringUtils.isEmpty(fans) ? fans : 0}',
+                        child: Text('当前粉丝数量：${StringUtils.isEmpty(fans) ? 0 : fans}',
                             style: TextStyle(
                                 color: PublicColor.whiteColor,
                                 fontSize: ScreenUtil().setSp(38))),

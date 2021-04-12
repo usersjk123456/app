@@ -141,6 +141,7 @@ class LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
               // 存值
               await prefs.setString('jwt', success['jwt']);
               await prefs.setInt('uid', success['user']['id']);
+              await prefs.setString("contactPhone", success['contactPhone']);
               await Future.delayed(Duration(seconds: 1), () {
                 // NavigatorUtils.goHomePage(context);
                 getList();
@@ -618,8 +619,6 @@ class LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
     );
   }
 
-  /// 苹果是否有微信登录用这种方法判断
-  /// 智障做法
   Future<void> getEnableVxLogin() async {
     Map<String, dynamic> map = Map();
     UserServer().getEnableVxLogin(map, (success) async {
